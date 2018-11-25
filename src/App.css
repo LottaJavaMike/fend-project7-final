@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.sideBar {
+  width: 300px;
+  max-width: 100%;
+  background: aquamarine;
+  height: 100vh;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
