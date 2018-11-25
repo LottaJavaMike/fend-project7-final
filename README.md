@@ -1,44 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Midtown Munchies
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Project Purpose:
 
-### `npm start`
+This app lists restaurants in Midtown Manhattan in New York. This project was created for the Udacity Front End Nanodegree Program. The purpose is to demonstrate understanding of the basic structure and operation of a React-based app.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Google Maps API is used to generate the map. The restaurant list pulled by using calls to the Foursquare API.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Loading the App in Development Mode:
 
-### `npm test`
+The project uses Node.js and Create-React-App. You can download Node.js from here: [Node.js](https://nodejs.org/en/)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once Node.js is installed, navigate to the directory you want to store the app and run the npm install
 
-### `npm run build`
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once installed you can start the app with
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If a new browser window does not load, open a browser window and navigate to [http://localhost:3000/](http://localhost:3000/)
 
-### `npm run eject`
+Note that the service worker will only cache the site when it is in production mode.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Loading the App in Production Mode
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the app locally, use:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm run build
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Navigate to the `build` directory and run a localhost server. If you have Python 2.x installed you can run the Python Simple Server like this.
 
-## Learn More
+```
+python -m SimpleHTTPServer 8080
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For Python 3.x, the command is:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+-m http.server 8080
+```
+
+In either case navigate to [http://localhost:8080](http://localhost:8080) in your browser.
+
+Or if you prefer you can use Node [serve](https://github.com/zeit/serve). If you do not have it installed you can install it with:
+
+```
+npm install -g serve
+```
+
+and then navigate into the build directory and run
+
+```
+serve -s
+```
+
+In this case the site will be hosted at [http://localhost:5000](http://localhost:5000)
+
+## Foursquare and Google Maps keys
+You will need to add your own Foursquare and Google Map keys. They are stored in 'credentials.js` 
+
+## Using the App
+
+The app loads displaying the midtown Manhattan area with markers for restaurants and a list of restaurants on the side
+Click on a marker or restaurant name on the list to get information about each restaurant
+
+### Resources:
+
+- [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
+- [React API](https://facebook.github.io/react/docs/react-api.html)
+- [React-script-loader](https://www.npmjs.com/package/react-async-script-loader)
+- [SVG-Loaders by Sam Herber](https://github.com/SamHerbert/SVG-Loaders)
+- [Foursquare API - Venue Search](https://developer.foursquare.com/docs/api/venues/search)
+- [Project Rubric](https://review.udacity.com/#!/rubrics/1351/view)
