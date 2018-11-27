@@ -19,6 +19,11 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.updateWidth);
+    // if the map fails to load
+    window.gm_authFailure = () =>
+          alert(
+              "Google Maps has encountered an error. Please check the console for more information"
+          );
   }
 
   componentDidUpdate({ isScriptLoadSucceed }) {
@@ -40,7 +45,7 @@ class App extends Component {
         bounds: bounds,
         mapReady: true
       });
-    } else if (!this.state.mapReady) {
+    }else if (!this.state.mapReady) {
       this.setState({ mapError: true });
     }
   }
